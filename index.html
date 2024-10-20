@@ -157,6 +157,8 @@
             // Initialize Product
             let product;
 
+
+
             // Listen for Form Events
 
             // Product Select Event 
@@ -174,6 +176,25 @@
 
 
             });
+
+
+            // Rating Change Event
+            ratingInput.addEventListener('blur', (e) => {
+
+                // Get value from input
+                const rating = e.target.value;
+
+                // Only accept values lower than 5
+                if(rating > 5){
+
+                    alert('Please rate 1 - 5')
+                    return;
+
+                }
+
+            });
+
+
 
 
 
