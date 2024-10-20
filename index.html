@@ -11,6 +11,39 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <title>Product Ratings</title>
+
+    <style>
+        .stars-outer{
+
+            position: relative; /* stars-inner is absolute */
+            display: inline-block;
+
+        }
+
+        .stars-inner{
+
+            position: absolute; /* overlays stars-outer */
+            top: 0;
+            left: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0; /* default = 0, percentage fills stars */
+
+        }
+
+        /* Add Unicode Stars */
+
+        .stars-outer::before {
+
+            content: "\f005 \f005 \f005 \f005 \f005"; /* Fontawesome Unicode for Star */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: #CCC;
+
+        }
+
+
+    </style>
 </head>
 <body>
         <div class="container">
