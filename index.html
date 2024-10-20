@@ -68,6 +68,10 @@
                     <option value="product5">Product 5</option>
                 </select>
             </div>
+            <div class="form-group">
+                <!-- INCREASE / DECREASE BY 0.1, MAX RATING = 5.0 -->
+                <input type="number" id="rating-control" class="form-control" step="0.1" max="5"  placeholder="Rate 1 - 5" disabled>
+            </div>
 
             <!-- PRODUCT TABLE -->
             <table class="table table-striped">
@@ -143,9 +147,11 @@
 
             }
 
-
             // Total Stars
             const starsTotal = 5;
+
+            // Listen for Page Load
+            document.addEventListener('DOMContentLoaded', getRatings);
 
             // Get ratings 
             function getRatings(){
@@ -173,8 +179,9 @@
 
             }
 
-            // Run getRatings() when page loads
-            document.addEventListener('DOMContentLoaded', getRatings);
+            
+            
+
 
 
         </script>
