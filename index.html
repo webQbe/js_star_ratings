@@ -150,6 +150,29 @@
             // Total Stars
             const starsTotal = 5;
 
+            // Select Form Elements
+            const selectProduct = document.getElementById('product-select');
+            const ratingInput = document.getElementById('rating-control');
+
+            // Initialize Product
+            let product;
+
+            // Listen for Form Events
+
+            // Product Select Event 
+            selectProduct.addEventListener('change', (e) => {
+
+                // Get value from selected element
+                product = e.target.value;
+                console.log(product);
+
+            });
+
+
+
+
+
+
             // Listen for Page Load
             document.addEventListener('DOMContentLoaded', getRatings);
 
