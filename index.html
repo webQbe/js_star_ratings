@@ -42,6 +42,15 @@
 
         }
 
+        .stars-inner::before {
+
+            content: "\f005 \f005 \f005 \f005 \f005"; /* Fontawesome Unicode for Star */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: #F8CE0B;
+
+        }
+ 
 
     </style>
 </head>
@@ -107,7 +116,7 @@
         <script>
 
             // Initial Ratings
-            const ratings = {
+            const products = {
 
                 product1 : 4.7,
                 product2 : 3.4,
@@ -125,17 +134,25 @@
             function getRatings(){
 
                 // Loop through ratings array
-                for(let r in ratings){
+                for(let product in products){
 
-                    // Get Current Rating % Out of 5
-                    const starPercentage = (ratings[r]/starsTotal)*100;
+                    // Log Keys
+                    console.log(product);
+
+                    // Get Current Key's Rating % Out of 5
+                    const starPercentage = (products[product]/starsTotal)*100;
                     
                     // Round % to nearest 10
                     const starPercentageRounded = Math.round(starPercentage/10)*10;
                     console.log(`${starPercentageRounded}%`);
 
+                    // Fill Stars with Yellow 
+                    // Select Element with .productX & .stars-inner Classes                   
+                    // Set Width to Rounded Rating %
+                    document.querySelector(`.${product} .stars-inner`).style.width = `${starPercentageRounded}%`;
+
                 }
-               
+
 
             }
 
