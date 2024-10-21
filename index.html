@@ -181,25 +181,23 @@
             // Rating Change Event
             ratingInput.addEventListener('blur', (e) => {
 
-                // Get value from input
-                const rating = e.target.value;
+                 // Get value from input and convert to a float
+                const rating = parseFloat(e.target.value);
 
-                // Only accept values lower than 5
-                if(rating > 5){
-
-                    alert('Please rate 1 - 5')
+                 // Only accept values lower than or equal to 5 and 
+                 // greater than or equal to 1
+                if (rating > 5 || rating < 1 || isNaN(rating)) {
+                    alert('Please rate between 1 and 5');
                     return;
-
                 }
 
+                // Update Rating
+                products[product] = rating;
+
+                // Call getRatings function
+                getRatings();
+
             });
-
-
-
-
-
-
-
 
             // Listen for Page Load
             document.addEventListener('DOMContentLoaded', getRatings);
@@ -230,10 +228,7 @@
 
             }
 
-            
-            
-
-
+        
 
         </script>
 </body>
