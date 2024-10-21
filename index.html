@@ -223,7 +223,11 @@
                     // Set Width to Rounded Rating %
                     document.querySelector(`.${product} .stars-inner`).style.width = `${starPercentageRounded}%`;
 
-                }
+
+                    // Display Number Ratings
+                    document.querySelector(`.${product} .number-rating`).innerHTML =  products[product];
+
+                }   
 
 
             }
